@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.alert-banner {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    padding: 20px;
+    color: white;
+    width: 80%;
+    z-index: 9999;
+    background-color: red;
+    border-radius: 3px; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.alert-banner.alerted {
+    transform: translate(-50%, 500%);
+}
