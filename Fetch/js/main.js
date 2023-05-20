@@ -1,7 +1,6 @@
 const getDataButton = document.getElementById('get-data');
 const dataArea = document.querySelector('#display-data');
 
-
 async function fetchProduct() {
     try {
         const response = await fetch('https://fakestoreapi.com/products');
@@ -12,7 +11,7 @@ async function fetchProduct() {
             productElement.classList.add('product');
             productElement.innerHTML = `
             <div class="product-image">
-                <img src="${product.image}" alt="${product.title}">
+                <img class="product-image" src="${product.image}" alt="${product.title}">
             </div>
             <div class="product-details">
                 <h3 class="product-title">${product.title}</h3>
