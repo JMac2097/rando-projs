@@ -1,3 +1,15 @@
+/* 
+  <color name="Marian blue" hex="1e3888" r="30" g="56" b="136" />
+  <color name="Moonstone" hex="47a8bd" r="71" g="168" b="189" />
+  <color name="Maize" hex="f5e663" r="245" g="230" b="99" />
+  <color name="Sandy brown" hex="ffad69" r="255" g="173" b="105" />
+  <color name="Cordovan" hex="9c3848" r="156" g="56" b="72" />
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +18,30 @@
 
 body{
     overflow-x: hidden;
+    background-color: #1e3888;
+    font-family: 'Inter', sans-serif;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #47a8bd;
+    border-radius: 3px;
+    margin-top: 20px;
+    box-shadow: black 0px 0px 10px;
+    border: 2px solid #f5e663;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h1 {
+    text-align: center;
+    color: #f5e663;
+    margin-bottom: 20px;
+}
+
 
 .alert-banner {
     position: absolute;
@@ -24,4 +59,20 @@ body{
 
 .alert-banner.alerted {
     transform: translate(-50%, 500%);
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #cecece;
+}
+
+.todo-item-delete {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
 }

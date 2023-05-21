@@ -6,7 +6,8 @@ const todosContainer = document.querySelector('.todos-container');
 const handleDeleteEvents = () => {
 	document.querySelectorAll('.todo-item-delete').forEach((button) => {
 		button.addEventListener('click', function (event) {
-			event.target.parentElement.parentElement.remove();
+			event.stopImmediatePropagation();
+			event.target.closest('.todo-item').remove();
 		});
 	});	
 }
@@ -22,7 +23,7 @@ submitButton.addEventListener('click', function (event) {
 		<div class="todo-item">
 			<div class="todo-item-text">${todo}</div>
 			<div class="todo-item-actions">
-				<button class="todo-item-delete">Delete</button>
+				<button class="todo-item-delete"><i class="fa-sharp fa-solid fa-delete-left" style="color: #c24b2e;"></i></button>
 			</div>
 		</div>
 	`;
