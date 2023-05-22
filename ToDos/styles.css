@@ -1,78 +1,93 @@
-/* 
-  <color name="Marian blue" hex="1e3888" r="30" g="56" b="136" />
-  <color name="Moonstone" hex="47a8bd" r="71" g="168" b="189" />
-  <color name="Maize" hex="f5e663" r="245" g="230" b="99" />
-  <color name="Sandy brown" hex="ffad69" r="255" g="173" b="105" />
-  <color name="Cordovan" hex="9c3848" r="156" g="56" b="72" />
- */
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
- @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    overflow-x: hidden;
-    background-color: #1e3888;
-    font-family: 'Inter', sans-serif;
+body {
+  overflow-x: hidden;
+  background-color: #1e3888;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #47a8bd;
-    border-radius: 3px;
-    margin-top: 20px;
-    box-shadow: black 0px 0px 10px;
-    border: 2px solid #f5e663;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d1e2e6;
+  border-radius: 3px;
+  margin-top: 20px;
+  box-shadow: black 0px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container h1 {
-    text-align: center;
-    color: #f5e663;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #f5e663;
+  margin-bottom: 20px;
 }
 
-
 .alert-banner {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    text-align: center;
-    padding: 20px;
-    color: white;
-    width: 80%;
-    z-index: 9999;
-    background-color: red;
-    border-radius: 3px; 
-    transition: transform 0.9s cubic-bezier(0, 0, 0.3, 1.39);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  width: 80%;
+  z-index: 9999;
+  background-color: red;
+  border-radius: 3px;
+  transition: transform 0.9s cubic-bezier(0, 0, 0.3, 1.39);
 }
 
 .alert-banner.alerted {
-    transform: translate(-50%, 500%);
+  transform: translate(-50%, 500%);
 }
 
-.todo-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    background-color: #cecece;
+.add-todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.todo-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #f5e663;
+  color: #eff0f3;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.todo-item,
+.todo-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  background-color: #cecece;
+  margin-bottom: 5px;
+}
+.todo-input {
+  border: none;
 }
 
 .todo-item-delete {
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 2rem;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: red;
 }
