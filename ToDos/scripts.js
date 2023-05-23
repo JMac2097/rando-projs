@@ -2,6 +2,19 @@ const submitButton = document.querySelector(".todo-submit");
 const todoInput = document.querySelector(".todo-input");
 const alertBanner = document.querySelector(".alert-banner");
 const todosContainer = document.querySelector(".todos-container");
+// function to create a todo item, saves from duplicating code --
+// just call and pass in what you want the todo to say
+const createToDo = (todoText) => {
+  const todoItem = `
+    <div class="todo-item">
+      <div class="todo-item-text">${todoText}</div>
+      <div class="todo-item-actions">
+        <button class="todo-item-delete"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
+      </div>
+    </div>
+  `;
+  return todoItem;
+};
 
 const setDeleteHandlers = () => {
   document.querySelectorAll(".todo-item-delete").forEach((button) => {
@@ -21,14 +34,7 @@ submitButton.addEventListener("click", function (event) {
     alertBanner.classList.add("alerted");
     return;
   }
-  const todoItem = `
-		<div class="todo-item">
-			<div class="todo-item-text">${todo}</div>
-			<div class="todo-item-actions">
-				<button class="todo-item-delete"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
-			</div>
-		</div>
-	`;
+  const todoItem = createToDo(todo);
   todosContainer.insertAdjacentHTML("beforeend", todoItem);
   todoInput.value = "";
   // set the event handlers for if someone wants to delete a todo
@@ -57,14 +63,7 @@ const loadTodos = () => {
   const todos = JSON.parse(localStorage.getItem("todos"));
   if (todos) {
     todos.forEach((todo) => {
-      const todoItem = `
-			<div class="todo-item">
-				<div class="todo-item-text">${todo}</div>
-				<div class="todo-item-actions">
-					<button class="todo-item-delete"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
-				</div>
-			</div>
-		`;
+      const todoItem = createToDo(todo);
       todosContainer.insertAdjacentHTML("beforeend", todoItem);
     });
     // set the event handlers for if someone wants to delete a todo
