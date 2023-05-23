@@ -45,7 +45,6 @@ body {
 .container h2 {
   text-align: center;
   color: #eec643ff;
-  margin-bottom: 20px;
   font-size: 1.2rem;
 }
 
@@ -71,19 +70,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   flex-direction: column;
 }
 
 .todo-submit {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   border: none;
   border-radius: 3px;
-  background-color: #011638ff;
+  background-color: #141414ff;
   color: #eff0f3;
   font-weight: bold;
   cursor: pointer;
+  margin: 20px 0;
+  height: 50px;
   transition: background-color 0.3s ease-in-out;
 }
 
