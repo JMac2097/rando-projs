@@ -7,8 +7,11 @@ const todosContainer = document.querySelector('.todos-container');
 const createToDo = (todoText) => {
 	const todoItem = `
     <div class="todo-item">
-      <div class="todo-item-text">${todoText}</div>
+      <div class="todo-item-text">
+	  <p>${todoText}</p>
+	  </div>
       <div class="todo-item-actions">
+	  	<button class="todo-item-edit"><i class="fa-sharp fa-solid fa-pen"></i></button>
         <button class="todo-item-delete"><i class="fa-sharp fa-solid fa-delete-left"></i></button>
       </div>
     </div>
@@ -27,6 +30,17 @@ const setDeleteHandlers = () => {
 	});
 };
 
+const setEditHandlers = () => {
+	document.querySelectorAll('.todo-item-edit').forEach((button) => {
+		button.addEventListener('click', function (event) {
+			event.stopImmediatePropagation();
+			event.target.closest('.todo-item-text p').contentEditable = true;
+ 
+			saveTodos();
+		});
+	});
+};
+
 const setExpandHandlers = () => {
 	document.querySelectorAll('.todo-item').forEach((todo) => {
 		todo.addEventListener('click', function (event) {
@@ -37,8 +51,8 @@ const setExpandHandlers = () => {
 	});
 };
 
-submitButton.addEventListener('click', function (event) {
-	event.preventDefault();
+// function to submit a todo
+const submitTodo = (event) => {
 	const todo = todoInput.value;
 	if (todo === '') {
 		setTimeout(() => alertBanner.classList.remove('alerted'), 1300);
@@ -54,6 +68,13 @@ submitButton.addEventListener('click', function (event) {
 	setDeleteHandlers();
 	// save the todos to local storage
 	saveTodos();
+};
+
+submitButton.addEventListener('click', submitTodo);
+
+todoInput.addEventListener('keydown', (event) => {
+	if (event.key === 'Enter') submitTodo();
+	console.log(event.key);
 });
 
 // builds a todo array and gets the stuff from the page and stores in the array
@@ -91,10 +112,12 @@ loadTodos();
 // close all expanded todos when clicking anywhere on the page
 // TODO: not working
 
-document.querySelector(body).addEventListener('click', (event) => {
+document.querySelector('body').addEventListener('click', (event) => {
+	console.log(event.target);
+	if (event.target.classList.contains('todo-item')) return;
 	todos = document.querySelectorAll('.todo-item');
 	todos.forEach((todo) => {
-		if (!todo.classList.contains('expanded'))
+		if (todo.classList.contains('expanded'))
 			todo.classList.remove('expanded');
 	});
 });

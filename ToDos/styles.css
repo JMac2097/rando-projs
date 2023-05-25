@@ -127,7 +127,7 @@ body {
 	outline: none;
 }
 
-.todo-item-delete {
+.todo-item-delete, .todo-item-edit {
 	border: none;
 	padding: 10px;
 	cursor: pointer;
