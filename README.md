@@ -6,4 +6,5 @@ Item so far:
 
 ~ Fetch Helper - Basic so far, but is a good example of using async to get a basic bit of data back from an API.
 
-~ ToDo - Vanilla JS todo list (duh), that stores todos to the screen.. Intension here is to expand and get some local storage on there, and maybe some ajaxing content.
+~ ToDo - Vanilla JS todo list (duh), that stores todos to the screen.. Got some local storage in there and all that good stuff, details reload in after page refresh.
+Wanting to add in editing options next.
