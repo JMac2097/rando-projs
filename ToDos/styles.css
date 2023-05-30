@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 /* CSS HEX 
 --night: #141414ff;
@@ -9,130 +9,134 @@
 */
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	overflow-x: hidden;
-	background-color: #011638ff;
-	font-family: 'Inter', sans-serif;
-	font-size: 16px;
+  overflow-x: hidden;
+  background-color: #011638ff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  padding: 50px 20px;
 }
 
 .container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #0d21a1ff;
-	border-radius: 3px;
-	margin-top: 20px;
-	box-shadow: black 0px 0px 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	border: 3px solid #eec643ff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0d21a1ff;
+  border-radius: 3px;
+  margin-top: 20px;
+  box-shadow: black 0px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #eec643ff;
 }
 
 .container h1 {
-	text-align: center;
-	color: #eec643ff;
-	margin-bottom: 20px;
-	font-size: 1.4rem;
+  text-align: center;
+  color: #eec643ff;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 }
 
 .container h2 {
-	text-align: center;
-	color: #eec643ff;
-	font-size: 1.2rem;
+  text-align: center;
+  color: #eec643ff;
+  font-size: 1.2rem;
 }
 
 .alert-banner {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -200%);
-	text-align: center;
-	padding: 20px;
-	color: #eef0f2ff;
-	width: 80%;
-	z-index: 9999;
-	background-color: #141414ff;
-	border-radius: 3px;
-	transition: transform 0.9s cubic-bezier(0, 0, 0.3, 1.39);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -500px);
+  text-align: center;
+  padding: 20px;
+  color: #eef0f2ff;
+  width: 80%;
+  z-index: 9999;
+  background-color: #141414ff;
+  border-radius: 3px;
+  transition: transform 0.9s cubic-bezier(0, 0, 0.3, 1.39);
 }
 
 .alert-banner.alerted {
-	transform: translate(-50%, 500%);
+  transform: translate(-50%, 500%);
 }
 
 .add-todo-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 10px;
-	flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: column;
 }
 
 .todo-submit {
-	width: 80%;
-	padding: 10px;
-	border: none;
-	border-radius: 3px;
-	background-color: #141414ff;
-	color: #eff0f3;
-	font-weight: bold;
-	cursor: pointer;
-	margin: 20px 0;
-	height: 50px;
-	transition: background-color 0.3s ease-in-out;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #141414ff;
+  color: #eff0f3;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px 0;
+  height: 50px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .todo-submit:hover {
-	background-color: #eec643ff;
+  background-color: #eec643ff;
 }
 
 .todo-item,
 .todo-input {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
-	border-bottom: 3px solid #eec643ff;
-	background-color: #011638ff;
-	margin-bottom: 5px;
-	color: #eff0f3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 3px solid #eec643ff;
+  background-color: #011638ff;
+  margin-bottom: 5px;
+  color: #eff0f3;
 }
 
 .todo-item {
-    align-items: flex-start;
-	border-radius: 3px;
-    height: 80px;
-	transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out, height 0.3s ease-in-out;
+  align-items: flex-start;
+  border-radius: 3px;
+  height: 80px;
+  transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out,
+    height 0.3s ease-in-out;
 }
 
 .todo-item:hover {
-	transform: translate(-3px, -5px);
-	box-shadow: rgb(43, 29, 29) 5px 10px 10px;
-	cursor: pointer;
+  transform: translate(-3px, -5px);
+  box-shadow: rgb(43, 29, 29) 5px 10px 10px;
+  cursor: pointer;
 }
 
 .todo-item.expanded {
-    height: 200px;
+  height: 200px;
 }
 
 .todo-input {
-	border: none;
-	outline: none;
+  border: none;
+  outline: none;
 }
 
-.todo-item-delete, .todo-item-edit {
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	font-size: 2rem;
-	color: #eec643ff;
-	border-radius: 3px;
-	background-color: #011638ff;
+.todo-item-delete,
+.todo-item-edit {
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #eec643ff;
+  border-radius: 3px;
+  background-color: #011638ff;
 }
