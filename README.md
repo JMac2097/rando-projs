@@ -8,3 +8,5 @@ Item so far:
 
 ~ ToDo - Vanilla JS todo list (duh), that stores todos to the screen.. Got some local storage in there and all that good stuff, details reload in after page refresh.
 Wanting to add in editing options next.
+
+~ Transitions -- Using Googles View Transition API
