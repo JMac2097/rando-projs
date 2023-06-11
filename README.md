@@ -10,3 +10,6 @@ Item so far:
 Wanting to add in editing options next.
 
 ~ Transitions -- Using Googles View Transition API
+Notes:
+After trying to ork with CRA app, I have found that it is not only slow, it was also wanting my PC to use a previous version of Webpack, non.
+So will attempt again using Vite
