@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="count">0</div>
+    <button class="tap">Ready?</button>
+  </body>
+</html>
+<script>
+  const count = document.querySelector(".count");
+  const tap = document.querySelector(".tap");
+
+  let buttonPressTimes = [];
+  let isRecording = false;
+
+  function toggleRecording() {
+    console.log("hello");
+    isRecording = !isRecording;
+    if (isRecording) {
+      buttonPressTimes = []; //clear any previous recorded times
+      startRecording();
+    } else {
+      stopRecording();
+    }
+  }
+
+  function recordButtonPress() {
+    const pressTime = new Date().getTime();
+    buttonPressTimes.push(pressTime);
+  }
+
+  function startRecording() {
+    tap.textContent = "Recording...";
+    tap.addEventListener("click", toggleRecording);
+  }
+
+  function stopRecording() {
+    tap.textContent = "Press to start";
+    tap.removeEventListener("click", toggleRecording);
+
+    const timeIntervals = [];
+    for (let i = 1; i < buttonPressTimes.length; i++) {
+      timeIntervals.push(buttonPressTimes[i] - buttonPressTimes[i - 1]);
+    }
+
+    const averageTimeInterval =
+      timeIntervals.reduce((acc, val) => acc + val, 0) / timeIntervals.length;
+
+    console.log(averageTimeInterval);
+
+    const bpm = 60 / (averageTimeInterval / 1000); // Divide by 1000 to convert milliseconds to seconds
+    console.log("Average BPM:", bpm);
+  }
+
+  tap.addEventListener("click", toggleRecording);
+</script>
