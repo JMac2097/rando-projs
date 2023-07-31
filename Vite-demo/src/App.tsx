@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -30,10 +30,12 @@ function App() {
       </p>
 
       <div className="card">
-        <a href="https://dev.to/hiteshtech/a-beginners-guide-to-create-spa-with-react-js-491c">React basic setup here</a>
+        <a href="https://dev.to/hiteshtech/a-beginners-guide-to-create-spa-with-react-js-491c">
+          React basic setup here
+        </a>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
